@@ -18,7 +18,6 @@ const Navbar = () => {
       className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
-
         {/* LOGO */}
         <Link
           href="/"
@@ -34,9 +33,18 @@ const Navbar = () => {
 
         {/* NAV LINKS */}
         <div className="hidden md:flex items-center gap-8 text-gray-400">
-          <span className="hover:text-white transition cursor-pointer">Features</span>
-          <span className="hover:text-white transition cursor-pointer">How it works</span>
-          <span className="hover:text-white transition cursor-pointer">Pricing</span>
+          <a
+            href="#features"
+            className="hover:text-white transition cursor-pointer"
+          >
+            Features
+          </a>
+          <span className="hover:text-white transition cursor-pointer">
+            How it works
+          </span>
+          <span className="hover:text-white transition cursor-pointer">
+            Pricing
+          </span>
         </div>
 
         {/* ACTION BUTTONS */}
