@@ -1,6 +1,7 @@
 "use client";
 
 import { Upload, Brain, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Working() {
   return (
@@ -8,7 +9,12 @@ export default function Working() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-10">
             How it works
           </h2>
@@ -55,18 +61,26 @@ export default function Working() {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT CARD */}
-        <div className="relative">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative"
+        >
           <div className="h-95 w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur flex flex-col items-center justify-center text-center">
             <div className="h-14 w-14 rounded-full bg-purple-600/20 flex items-center justify-center text-purple-500 mb-4">
               <Upload size={26} />
             </div>
             <h4 className="font-semibold text-lg">Ready to process</h4>
-            <p className="text-sm text-white/60 mt-1">Support for PDF, DOCX, PPTX</p>
+            <p className="text-sm text-white/60 mt-1">
+              Support for PDF, DOCX, PPTX
+            </p>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

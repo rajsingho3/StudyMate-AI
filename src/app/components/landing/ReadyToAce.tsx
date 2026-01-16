@@ -1,10 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function ReadyToAce() {
   return (
     <section className="relative py-24 bg-[#0B061A]">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          
+        >
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-purple-600 to-indigo-600 p-12 md:p-16 text-center">
 
@@ -41,6 +49,7 @@ export default function ReadyToAce() {
           </p>
         </div>
       </div>
+        </motion.div>
     </section>
   );
 }
