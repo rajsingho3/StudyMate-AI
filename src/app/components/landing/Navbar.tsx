@@ -39,9 +39,12 @@ const Navbar = () => {
           >
             Features
           </a>
-          <span className="hover:text-white transition cursor-pointer">
+          <a
+            href="#working"
+            className="hover:text-white transition cursor-pointer"
+          >
             How it works
-          </span>
+          </a>
           <span className="hover:text-white transition cursor-pointer">
             Pricing
           </span>
