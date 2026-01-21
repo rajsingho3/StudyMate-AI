@@ -1,21 +1,25 @@
-import {motion} from 'framer-motion';
-import clsx from 'clsx';
+import { motion } from "framer-motion";
+import clsx from "clsx";
+import Link from "next/link";
 
 type ButtonProps = {
-    children: React.ReactNode;
-    variant?: 'primary'| 'secondary' | 'ghost';
-    className?: string;
-    icon?: React.ReactNode;
-    onClick?: () => void;
-}
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "ghost";
+  className?: string;
+  icon?: React.ReactNode;
+  onClick?: () => void;
+  href?: string;
+};
 
 const Button = ({
-    children,
-    variant = 'primary',
-    className,
-    icon,
-    onClick,}: ButtonProps) => {
-        const base =
+  children,
+  variant = "primary",
+  className,
+  icon,
+  onClick,
+  href,
+}: ButtonProps) => {
+  const base =
     "relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-300 overflow-hidden cursor-pointer";
 
   const variants = {
@@ -25,17 +29,24 @@ const Button = ({
       "bg-white/10 text-white backdrop-blur border border-white/20 hover:bg-white/20",
     ghost: "bg-transparent text-white/80 hover:text-white",
   };
-  return(
+
+  const button = (
     <motion.button
-    whileHover={{scale: 1.05}}
-    whileTap={{scale: 0.95}}
-    onClick={onClick}
-    className={clsx(base, variants[variant], className)}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={onClick}
+      className={clsx(base, variants[variant], className)}
     >
-       {icon && <span className="text-lg">{icon}</span>}
+      {icon && <span className="text-lg">{icon}</span>}
       {children}
     </motion.button>
   );
+
+  if (href) {
+    return <Link href={href}>{button}</Link>;
+  }
+
+  return button;
 };
 
 export default Button;

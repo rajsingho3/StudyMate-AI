@@ -7,6 +7,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import Button from "../ui/Button";
 import StudyMateLogoIcon from "../ui/Study";
 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -52,7 +53,7 @@ const Navbar = () => {
 
         {/* ACTION BUTTONS */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost">Login</Button>
+          <Button href="/signin" variant="ghost">Login</Button>
           <Button variant="primary">Get Started</Button>
         </div>
 
@@ -74,7 +75,7 @@ const Navbar = () => {
             className="md:hidden bg-black/80 backdrop-blur-xl border-t border-white/10"
           >
             <div className="flex flex-col gap-3 p-4">
-              <Button variant="ghost" className="w-full justify-start">
+              <Button href="/signin" variant="ghost" className="w-full justify-start">
                 Login
               </Button>
               <Button variant="primary" className="w-full">
